@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sales Invoice</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous" />
+
+    <style>
+      @media print {
+        body {
+          zoom: 80%;
+        }
+      }
+    </style>
+  </head>
+  <body style="font-size: 14px">
+    <div class="container">
+      <div id="invoice" class="py-3">
+        <div class="row g-3">
+          <!-- Title -->
+          <div class="col-12">
+            <h3 class="text-center border border-dark">Sales Invoice</h3>
+          </div>
+          <!-- Info -->
+          <div class="col-12 d-flex justify-content-between">
+            <div>
+              <div class="fw-semibold">Customer details:</div>
+              <div class="text-uppercase">Future Promotion (PVT) LTD</div>
+            </div>
+            <div>
+              <div class="info-table d-flex flex-column mb-3" style="width: 250px;">
+                <div class="d-flex flex-row">
+                  <div class="fw-semibold">Invoice no:</div>
+                  <div class="text-end border-bottom border-dark flex-grow-1">0000665</div>
+                </div>
+                <div class="d-flex flex-row">
+                  <div class="fw-semibold">Date:</div>
+                  <div class="text-end border-bottom border-dark flex-grow-1">03rd Oct 2022</div>
+                </div>
+                <div class="d-flex flex-row">
+                  <div class="fw-semibold">Customer PO:</div>
+                  <div class="text-end border-bottom border-dark flex-grow-1"></div>
+                </div>
+                <div class="d-flex flex-row">
+                  <div class="fw-semibold">Payment method:</div>
+                  <div class="text-end border-bottom border-dark flex-grow-1">CREDIT</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Table -->
+          <div class="col-12">
+            <table id="main-table" class="table w-100 table-bordered border-dark">
+              <thead>
+                <tr>
+                  <th scope="col" class="text-center">#</th>
+                  <th scope="col" class="text-center">Description</th>
+                  <th scope="col" class="text-center">Qty.</th>
+                  <th scope="col" class="text-center">Rate</th>
+                  <th scope="col" class="text-center">Value</th>
+                </tr>
+              </thead>
+              <tbody style="min-height: 100px">
+                <tr>
+                  <td class="px-2 py-1 text-center">1</td>
+                  <td class="px-2 py-1">44" Sublimation Paper Roll (China) (100M/90GSM)</td>
+                  <td class="px-2 py-1 text-center">10</td>
+                  <td class="px-2 py-1 text-end">14,500.00</td>
+                  <td class="px-2 py-1 text-end">145,000.00</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="3" rowspan="4"></td>
+                  <td class="px-2 py-0 fw-semibold">Total</td>
+                  <td class="px-2 py-0 text-end">145,000.00</td>
+                </tr>
+                <tr>
+                  <td class="px-2 py-0 fw-semibold">Advance / Discount</td>
+                  <td class="px-2 py-0 text-end">-</td>
+                </tr>
+                <tr>
+                  <td class="px-2 py-0 fw-semibold">Paid Payment</td>
+                  <td class="px-2 py-0 text-end">-</td>
+                </tr>
+                <tr>
+                  <td class="px-2 py-0 fw-semibold">Balance</td>
+                  <td class="px-2 py-0 text-end">145,000.00</td>
+                </tr>
+              </tfoot>
+            </table>
+            <div style="font-size: 13px">Any item cannot be returned after 7 days.</div>
+            <div style="font-size: 13px">
+              Received the above mentioned items are in good order and condition.
+            </div>
+          </div>
+          <div class="col-6 mt-5 text-center">
+            <div class="border-top border-dark mx-auto" style="width: 250px">Authorized by</div>
+          </div>
+          <div class="col-6 mt-5 text-center">
+            <div class="border-top border-dark mx-auto" style="width: 250px">Received by</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const table = document.getElementById('main-table')
+      const rows = table.querySelectorAll('tbody tr')
+      const emptyRows = 9
+
+      if (rows.length < emptyRows) {
+        rows[rows.length - 1].setAttribute('height', (emptyRows - 2) * 30 * rows.length)
+      }
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"></script>
+  </body>
+</html>
