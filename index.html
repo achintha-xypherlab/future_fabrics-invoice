@@ -28,27 +28,23 @@
           </div>
           <!-- Info -->
           <div class="col-12 d-flex justify-content-between">
-            <div>
-              <div class="fw-semibold">Customer details:</div>
+            <div class="d-flex">
+              <div class="fw-semibold me-2">Name:</div>
               <div class="text-uppercase">Future Promotion (PVT) LTD</div>
             </div>
             <div>
-              <div class="info-table d-flex flex-column mb-3" style="width: 250px;">
+              <div class="info-table d-flex flex-column mb-3" style="width: 250px">
                 <div class="d-flex flex-row">
                   <div class="fw-semibold">Invoice no:</div>
                   <div class="text-end border-bottom border-dark flex-grow-1">0000665</div>
                 </div>
                 <div class="d-flex flex-row">
+                  <div class="fw-semibold">Reference no:</div>
+                  <div class="text-end border-bottom border-dark flex-grow-1">0000665</div>
+                </div>
+                <div class="d-flex flex-row">
                   <div class="fw-semibold">Date:</div>
                   <div class="text-end border-bottom border-dark flex-grow-1">03rd Oct 2022</div>
-                </div>
-                <div class="d-flex flex-row">
-                  <div class="fw-semibold">Customer PO:</div>
-                  <div class="text-end border-bottom border-dark flex-grow-1"></div>
-                </div>
-                <div class="d-flex flex-row">
-                  <div class="fw-semibold">Payment method:</div>
-                  <div class="text-end border-bottom border-dark flex-grow-1">CREDIT</div>
                 </div>
               </div>
             </div>
@@ -76,20 +72,32 @@
               </tbody>
               <tfoot>
                 <tr>
-                  <td colspan="3" rowspan="4"></td>
+                  <td colspan="3" rowspan="7"></td>
                   <td class="px-2 py-0 fw-semibold">Total</td>
                   <td class="px-2 py-0 text-end">145,000.00</td>
                 </tr>
                 <tr>
+                  <td class="px-2 py-0 fw-semibold">Return Amount</td>
+                  <td class="px-2 py-0 text-end">0.00</td>
+                </tr>
+                <tr>
                   <td class="px-2 py-0 fw-semibold">Advance / Discount</td>
-                  <td class="px-2 py-0 text-end">-</td>
+                  <td class="px-2 py-0 text-end">0.00</td>
                 </tr>
                 <tr>
                   <td class="px-2 py-0 fw-semibold">Paid Payment</td>
-                  <td class="px-2 py-0 text-end">-</td>
+                  <td class="px-2 py-0 text-end">500.00</td>
                 </tr>
                 <tr>
                   <td class="px-2 py-0 fw-semibold">Balance</td>
+                  <td class="px-2 py-0 text-end">145,000.00</td>
+                </tr>
+                <tr>
+                  <td class="px-2 py-0 fw-semibold">Previous Due</td>
+                  <td class="px-2 py-0 text-end">145,000.00</td>
+                </tr>
+                <tr>
+                  <td class="px-2 py-0 fw-semibold">Total Due Amount</td>
                   <td class="px-2 py-0 text-end">145,000.00</td>
                 </tr>
               </tfoot>
@@ -112,9 +120,10 @@
       const table = document.getElementById('main-table')
       const rows = table.querySelectorAll('tbody tr')
       const emptyRows = 9
+      const rowHeight = 30
 
       if (rows.length < emptyRows) {
-        rows[rows.length - 1].setAttribute('height', (emptyRows - 2) * 30 * rows.length)
+        rows[rows.length - 1].setAttribute('height', (emptyRows - rows.length) * rowHeight)
       }
     </script>
     <script
